@@ -3,10 +3,11 @@
      I am using them for free with attribution of the author (above) as advised in the article here
      [https://support.flaticon.com/hc/en-us/articles/202798341-Are-Flaticon-contents-for-free-and-where-can-I-use-them-]
 
-     Joanna Bistekos (B00710704)
--->
+     Joanna Bistekos (B00710704)-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.csci4176.jbstks.weatherapp">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -14,7 +15,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:screenOrientation="portrait">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
