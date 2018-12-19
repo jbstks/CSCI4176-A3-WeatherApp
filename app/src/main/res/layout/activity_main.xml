@@ -3,7 +3,8 @@
      I am using them for free with attribution of the author (above) as advised in the article here
      [https://support.flaticon.com/hc/en-us/articles/202798341-Are-Flaticon-contents-for-free-and-where-can-I-use-them-]
 
-     Joanna Bistekos (B00710704)-->
+     Joanna Bistekos (B00710704)
+     November 8, 2018 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,29 +14,24 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/cityNameET-label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter City Name:"
-        android:visibility="gone" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <!-- Search box used to search for weather data of a specific city -->
         <EditText
             android:id="@+id/cityNameET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="Halifax"
+            android:hint="@string/default_city"
             android:inputType="text"
             android:singleLine="true"
             android:textColorLink="@color/colorPrimary" />
 
+        <!-- Search button -->
         <android.support.v7.widget.CardView
             android:id="@+id/getWeatherBtn"
             android:layout_width="match_parent"
@@ -50,11 +46,11 @@
             app:cardCornerRadius="3dp">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
-                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
                 android:drawableTint="@color/cardview_light_background" />
         </android.support.v7.widget.CardView>
 
@@ -66,12 +62,13 @@
         android:layout_marginTop="50dp"
         android:orientation="vertical">
 
+        <!-- Search box used to search for weather data of a specific city -->
         <TextView
             android:id="@+id/city"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="No Data"
+            android:text="@string/no_data"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@android:color/black"
@@ -84,12 +81,14 @@
             android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
 
+            <!-- Weather icon that changes depending on the current weather -->
             <ImageView
                 android:id="@+id/weatherIcon"
                 android:layout_width="0dp"
                 android:layout_height="81.25dp"
                 android:layout_gravity="center_vertical|end"
                 android:layout_weight="1"
+                android:contentDescription="@string/weather_icon"
                 android:scaleType="fitEnd"
                 android:src="@drawable/cloudy" />
 
@@ -101,7 +100,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:includeFontPadding="false"
-                android:text="―°"
+                android:text="@string/no_temp"
                 android:textAlignment="viewStart"
                 android:textColor="@android:color/black"
                 android:textSize="75sp" />
@@ -113,8 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:inputType="textCapSentences"
-            android:text="―"
+            android:text="@string/no_content"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="18sp"
@@ -125,9 +123,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:capitalize="sentences"
-            android:inputType="textCapCharacters|textCapWords|textCapSentences"
-            android:text="―"
+            android:text="@string/no_content"
             android:textAlignment="center" />
 
         <View
@@ -147,11 +143,12 @@
             android:paddingBottom="8dp">
 
             <ImageView
-                android:id="@+id/icon3"
+                android:id="@+id/temperatureIcon"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="8dp"
                 android:adjustViewBounds="false"
+                android:contentDescription="@string/temperature_icon"
                 android:cropToPadding="false"
                 android:padding="2dp"
                 app:srcCompat="@drawable/ic_temperature" />
@@ -163,7 +160,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="8dp"
                 android:letterSpacing="0.1"
-                android:text="HIGH / LOW"
+                android:text="@string/high_low"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textStyle="bold" />
@@ -181,33 +178,11 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|end"
                     android:layout_marginEnd="8dp"
-                    android:text="―° / ―°"
+                    android:text="@string/no_content_highlow_temp"
                     android:textAlignment="viewEnd"
-                    android:textSize="17dp" />
+                    android:textSize="17sp" />
 
-                <TextView
-                    android:id="@+id/slash"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginEnd="8dp"
-                    android:text="/"
-                    android:textAlignment="viewEnd"
-                    android:textSize="17dp"
-                    android:visibility="gone" />
-
-                <TextView
-                    android:id="@+id/lowTemp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginEnd="8dp"
-                    android:text="3"
-                    android:textAlignment="viewEnd"
-                    android:textSize="17dp"
-                    android:visibility="gone" />
             </LinearLayout>
-
         </LinearLayout>
 
         <View
@@ -227,11 +202,12 @@
             android:paddingBottom="8dp">
 
             <ImageView
-                android:id="@+id/icon"
+                android:id="@+id/humidityIcon"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="8dp"
                 android:adjustViewBounds="false"
+                android:contentDescription="@string/humidity_icon"
                 android:cropToPadding="false"
                 android:padding="2dp"
                 app:srcCompat="@drawable/ic_humidity" />
@@ -243,7 +219,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="8dp"
                 android:letterSpacing="0.1"
-                android:text="HUMIDITY"
+                android:text="@string/humidity"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textStyle="bold" />
@@ -255,9 +231,9 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="8dp"
                 android:gravity="center_horizontal"
-                android:text="―%"
+                android:text="@string/no_content_percent"
                 android:textAlignment="viewEnd"
-                android:textSize="17dp" />
+                android:textSize="17sp" />
         </LinearLayout>
 
         <View
@@ -281,6 +257,7 @@
                 android:layout_height="35dp"
                 android:layout_marginStart="8dp"
                 android:adjustViewBounds="false"
+                android:contentDescription="@string/cloud_icon"
                 android:cropToPadding="false"
                 android:padding="2dp"
                 app:srcCompat="@drawable/ic_cloud" />
@@ -292,7 +269,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="8dp"
                 android:letterSpacing="0.1"
-                android:text="CLOUDINESS"
+                android:text="@string/cloudiness"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textStyle="normal|bold" />
@@ -304,10 +281,10 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="8dp"
                 android:gravity="center_vertical"
-                android:text="―%"
+                android:text="@string/no_content_percent"
                 android:textAlignment="viewEnd"
                 android:textColorLink="@color/colorAccent"
-                android:textSize="17dp" />
+                android:textSize="17sp" />
 
         </LinearLayout>
 

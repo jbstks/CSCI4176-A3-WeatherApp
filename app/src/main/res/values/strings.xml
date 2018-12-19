@@ -1,3 +1,24 @@
+<!-- Joanna Bistekos (B00710704)
+     November 8, 2018 -->
 <resources>
     <string name="app_name">WeatherApp</string>
+
+    <!-- label strings -->
+    <string name="default_city">Halifax</string>
+    <string name="high_low">HIGH / LOW</string>
+    <string name="cloudiness">CLOUDINESS</string>
+    <string name="humidity">HUMIDITY</string>
+
+    <!-- no content strings -->
+    <string name="no_data">No Data</string>
+    <string name="no_temp">―°</string>
+    <string name="no_content">―</string>
+    <string name="no_content_percent">―%</string>
+    <string name="no_content_highlow_temp">―° / ―°</string>
+
+    <!-- content descriptions of images -->
+    <string name="temperature_icon">Temperature Icon</string>
+    <string name="weather_icon">Weather Icon</string>
+    <string name="cloud_icon">Cloud Icon</string>
+    <string name="humidity_icon">Humidity Icon</string>
 </resources>

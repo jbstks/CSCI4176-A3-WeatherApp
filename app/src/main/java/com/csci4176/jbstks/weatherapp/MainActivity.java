@@ -31,7 +31,8 @@ import com.android.volley.toolbox.Volley;
  *
  * Referenced content from Lab 6.
  *
- * Joanna Bistekos (B00710704)
+ * @author Joanna Bistekos (B00710704)
+ * November 8, 2018
  */
 public class MainActivity extends AppCompatActivity {
 
